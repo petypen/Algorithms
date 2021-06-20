@@ -4,10 +4,10 @@ namespace GrokkingAlgorithms
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Hello World!");
-            int[] TestSet = ArrayGenerator.AsOrdered(int.MaxValue);
+            int[] TestSet = ArrayGenerator.AsOrdered(0);
             Console.WriteLine(TestSet.Length);
         }
     }
