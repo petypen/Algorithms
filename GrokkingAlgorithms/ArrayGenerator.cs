@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace GrokkingAlgorithms
 {
-    class ArrayGenerator
+    public static class ArrayGenerator
     {
-        internal static int[] AsOrdered(uint arraySize)
+        public static int[] AsOrdered(uint arraySize)
         {
             // magic numeric
             // https://docs.microsoft.com/en-us/dotnet/api/system.array?redirectedfrom=MSDN&view=net-5.0
