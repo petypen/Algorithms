@@ -12,23 +12,23 @@ namespace GrokkingAlgorithms
         {
             // magic numeric
             // https://docs.microsoft.com/en-us/dotnet/api/system.array?redirectedfrom=MSDN&view=net-5.0
-            const int maxSizeArray = 0X7FEFFFFF;
+            const uint maxSizeArray = 0X7FEFFFFF;
 
             int[] ArrayResult;
 
             switch (arraySize)
             {
                 case 0:
-                    ArrayResult = new int[1];
+                    arraySize = 1;
                     break;
-                case < maxSizeArray:
-                    ArrayResult = new int[arraySize];
-                    break;
-                default:
-                    ArrayResult = new int[maxSizeArray];
+                case > maxSizeArray:
                     arraySize = maxSizeArray;
                     break;
+                default:
+                    break;
             }
+
+            ArrayResult = new int[arraySize];
 
             for (int i = 0; i < arraySize; i++)
             {
