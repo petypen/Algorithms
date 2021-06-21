@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using GrokkingAlgorithms;
+using System.Linq;
 
 namespace GrokkingAlgorithmsTests
 {
@@ -10,7 +11,7 @@ namespace GrokkingAlgorithmsTests
         public void AsOrder_100()
         {
             // arrange
-            uint arraySize = 100;
+            int arraySize = 100;
             int[] testArray;
 
             // act
@@ -18,17 +19,14 @@ namespace GrokkingAlgorithmsTests
 
             // assert
             Assert.Equal<int>((int)arraySize, testArray.Length);
-            for (int i = 0; i < arraySize; i++)
-            {
-                Assert.Equal<int>(testArray[i], i);
-            }
+            Assert.True(testArray.SequenceEqual(Enumerable.Range(0, arraySize).ToArray()));
         }
 
         [Fact]
         public void AsOrder_0()
         {
             // arrange
-            uint arraySize = 0;
+            int arraySize = 0;
             int[] testArray;
 
             // act
@@ -43,7 +41,7 @@ namespace GrokkingAlgorithmsTests
         public void AsOrder_Max()
         {
             // arrange
-            uint arraySize = uint.MaxValue;
+            int arraySize = int.MaxValue;
             int[] testArray;
             const int maxSizeArray = 0X7FEFFFFF;
 
@@ -52,10 +50,7 @@ namespace GrokkingAlgorithmsTests
 
             // assert
             Assert.Equal(maxSizeArray, testArray.Length);
-            for (int i = 0; i < maxSizeArray; i++)
-            {
-                Assert.Equal<int>(testArray[i], i);
-            }
+            Assert.True(testArray.SequenceEqual(Enumerable.Range(0, maxSizeArray).ToArray()));
         }
 
     }
