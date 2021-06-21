@@ -7,7 +7,7 @@ namespace GrokkingAlgorithms
         static void Main()
         {
             Console.WriteLine("Hello World!");
-            int[] TestSet = ArrayGenerator.AsOrdered(0);
+            int[] TestSet = ArrayGenerator.AsOrdered(int.MaxValue);
             Console.WriteLine(TestSet.Length);
         }
     }
