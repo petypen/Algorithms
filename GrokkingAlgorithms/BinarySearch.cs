@@ -8,8 +8,18 @@ namespace GrokkingAlgorithms
 {
     public static class BinarySearch
     {
-        public static int? SearchOne(int[] sortedList, int item)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sortedList"> отсортированный массив, в котром производится бинарный поиск </param>
+        /// <param name="item"> искомое число </param>
+        /// <returns>
+        ///     * индекс элемента массива с найденным значением или null, есзи значение не найдено
+        ///     * количество итераций, за которое был найден результат
+        /// </returns>
+        public static (int?, int) SearchOne(int[] sortedList, int item)
         {
+            int numberOfIteration = 0;
             int low = 0;
             int high = sortedList.Length - 1;
             int mid;
@@ -17,10 +27,11 @@ namespace GrokkingAlgorithms
 
             while (low <= high)
             {
+                numberOfIteration++;
                 mid = (high + low) / 2;
                 if (sortedList[mid] == item)
                 {
-                    return mid;
+                    return (mid, numberOfIteration);
                 }
                 if (sortedList[mid] > item)
                 {
@@ -32,7 +43,7 @@ namespace GrokkingAlgorithms
                 }
             }
 
-            return null;
+            return (null, numberOfIteration);
         }
     }
 }
