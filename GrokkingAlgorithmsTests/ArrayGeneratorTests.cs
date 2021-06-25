@@ -101,5 +101,34 @@ namespace GrokkingAlgorithmsTests
             Assert.Equal<int>(maxSizeArray, testArray.Length);
             Assert.False(testArray.SequenceEqual(Enumerable.Range(0, maxSizeArray).ToArray()));
         }
+
+        [Fact]
+        public void SearchOne_100_66()
+        {
+            // arange
+            int[] sortedList = ArrayGenerator.AsOrdered(100);
+            int item = 66;
+
+            // act
+            int? result = BinarySearch.SearchOne(sortedList, item);
+
+            // assert
+            Assert.Equal<int>(item, result ?? 0 );
+        }
+
+        [Fact]
+        public void SearchOne_100_117()
+        {
+            // arange
+            int[] sortedList = ArrayGenerator.AsOrdered(100);
+            int item = 117;
+
+            // act
+            int? result = BinarySearch.SearchOne(sortedList, item);
+
+            // assert
+            Assert.Null(result);
+        }
+
     }
 }
