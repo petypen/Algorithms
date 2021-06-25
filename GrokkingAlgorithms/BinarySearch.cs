@@ -15,18 +15,21 @@ namespace GrokkingAlgorithms
             int mid;
 
 
-            mid = (high - low) / 2;
-            if (sortedList[mid] == item)
+            while (low <= high)
             {
-                return mid;
-            }
-            if (sortedList[mid] > item)
-            {
-                high = mid - 1;
-            }
-            else
-            {
-                low = mid + 1;
+                mid = (high + low) / 2;
+                if (sortedList[mid] == item)
+                {
+                    return mid;
+                }
+                if (sortedList[mid] > item)
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
             }
 
             return null;
