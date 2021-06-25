@@ -110,10 +110,10 @@ namespace GrokkingAlgorithmsTests
             int item = 66;
 
             // act
-            int? result = BinarySearch.SearchOne(sortedList, item);
+            (int?, int) result = BinarySearch.SearchOne(sortedList, item);
 
             // assert
-            Assert.Equal<int>(item, result ?? 0 );
+            Assert.Equal<int>(item, result.Item1 ?? 0 );
         }
 
         [Fact]
@@ -124,10 +124,10 @@ namespace GrokkingAlgorithmsTests
             int item = 117;
 
             // act
-            int? result = BinarySearch.SearchOne(sortedList, item);
+            (int?, int) result = BinarySearch.SearchOne(sortedList, item);
 
             // assert
-            Assert.Null(result);
+            Assert.Null(result.Item1);
         }
 
     }

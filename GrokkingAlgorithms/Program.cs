@@ -10,12 +10,11 @@ namespace GrokkingAlgorithms
             int[] TestSet = ArrayGenerator.AsOrdered(0);
             ArrayGenerator.AsMixed(ref TestSet);
 
-            foreach (var item in TestSet)
-            {
-                Console.Write("{0, 5}", item);
-            }
+            (int?, int) resullt;
+            resullt = BinarySearch.SearchOne(ArrayGenerator.AsOrdered(1_000_000), 873_999);
+            Console.WriteLine($"Element {resullt.Item1??0} number of iteration {resullt.Item2}");
+
             Console.WriteLine();
-            Console.WriteLine($"Number of elements {TestSet.Length}");
         }
     }
 }
